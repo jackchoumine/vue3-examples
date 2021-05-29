@@ -1,5 +1,7 @@
 <template>
   <div>
+    <h1>函数式组件</h1>
+    <FunctionalCom></FunctionalCom>
     <h1>vue3 render exmaple</h1>
     <Model />
     <ParentButton />
@@ -62,6 +64,7 @@
 
 <script>
 import { ref } from 'vue'
+import FunctionalCom from './components/FunctionalCom.vue'
 import Model from './components/Model.vue'
 // import MyButton2 from './components/MyButton2.jsx'
 import MyButton from './components/MyButton.vue'
@@ -73,6 +76,7 @@ import ParentButton from './components/ParentButton.js'
 export default {
   name: 'App',
   components: {
+    FunctionalCom,
     Model,
     ParentButton,
     //  MyButton2,
