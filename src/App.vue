@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>vue3 render exmaple</h1>
+    <Model />
     <ParentButton />
     <MyButton2 buttonText="按钮" id="my-id" data-key="custom-prop" @my-click="onMyClick" :onProp="() => {}">
       <span>这是插槽</span>
@@ -61,6 +62,7 @@
 
 <script>
 import { ref } from 'vue'
+import Model from './components/Model.vue'
 // import MyButton2 from './components/MyButton2.jsx'
 import MyButton from './components/MyButton.vue'
 import MyHead from './components/MyHead.vue'
@@ -71,6 +73,7 @@ import ParentButton from './components/ParentButton.js'
 export default {
   name: 'App',
   components: {
+    Model,
     ParentButton,
     //  MyButton2,
     MyButtonRender,
