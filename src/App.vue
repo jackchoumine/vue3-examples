@@ -1,6 +1,10 @@
 <template>
   <div>
     <h1>vue3 render exmaple</h1>
+    <ParentButton />
+    <MyButton2 buttonText="按钮" id="my-id" data-key="custom-prop" @my-click="onMyClick" :onProp="() => {}">
+      <span>这是插槽</span>
+    </MyButton2>
     <MyButtonRender title="title" @my-click="onMyClick">
       <template v-slot:left>
         <span>左边插槽</span>
@@ -57,14 +61,24 @@
 
 <script>
 import { ref } from 'vue'
+// import MyButton2 from './components/MyButton2.jsx'
 import MyButton from './components/MyButton.vue'
 import MyHead from './components/MyHead.vue'
 import YouHead from './components/YouHead.jsx'
 import MyButtonSetup from './components/MyButton.jsx'
 import MyButtonRender from './components/MyButtonRender'
+import ParentButton from './components/ParentButton.js'
 export default {
   name: 'App',
-  components: { MyButtonRender, MyButtonSetup, MyButton, MyHead, YouHead },
+  components: {
+    ParentButton,
+    //  MyButton2,
+    MyButtonRender,
+    MyButtonSetup,
+    MyButton,
+    MyHead,
+    YouHead,
+  },
   setup() {
     const dataFromChild = ref(Math.random().toString(36))
     const onMyEvent = data => {
