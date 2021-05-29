@@ -1,6 +1,11 @@
 <template>
   <div>
-    <TextareaModelTwo/>
+    <h2>二次封装v-model</h2>
+    <YouTextareaJSX v-model="youInput" />
+    <!-- <YouTextarea v-model="youInput" /> -->
+    <p>{{ youInput }}</p>
+    <hr />
+    <TextareaModelTwo />
     <hr />
     <TextareaModel />
     <hr />
@@ -17,13 +22,16 @@ import MyInputTwo from './MyInputTwo.jsx'
 import MyTextarea from './MyTextarea.vue'
 import TextareaModel from './TextareaModel.js'
 import TextareaModelTwo from './TextareaModelTwo'
+import YouTextarea from './YouTextarea.vue'
+import YouTextareaJSX from './YouTextareaJSX.jsx'
 export default {
   name: 'Model',
-  components: { TextareaModelTwo, TextareaModel, MyTextarea, MyInputTwo, MyInputOne },
+  components: { YouTextareaJSX, YouTextarea, TextareaModelTwo, TextareaModel, MyTextarea, MyInputTwo, MyInputOne },
   setup(props, { emit, attrs, slots }) {
     const input = ref('')
     const title = ref('title')
-    return { input, title }
+    const youInput = ref('youInput')
+    return { input, title, youInput }
   },
 }
 </script>
