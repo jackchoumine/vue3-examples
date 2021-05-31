@@ -4,7 +4,7 @@
   ],
   "include": [
     "src/**/*"
-  ],
+, "babel.config.js"  ],
   "compilerOptions": {
     // "target": "es2017",
     "allowSyntheticDefaultImports": false,
